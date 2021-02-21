@@ -8,11 +8,11 @@ This application is a Node CLI which takes in user input in order to generate an
 
 ## Table of Contents  
 
-[Installation](#installation)
-[Usage](#usage)
-[License](#license)
-[Credits](#credits)
-[Questions](#questions)
+- [Installation](#installation)\n
+- [Usage](#usage)\n
+- [License](#license)\n
+- [Credits](#credits)\n
+- [Questions](#questions)\n
 
 ## Installation  
 
@@ -24,7 +24,7 @@ A demo video for the application is available here:
 
 ## License  
 
-Copyright 2021 Greg Rissd
+Copyright 2021 Greg Riss
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
@@ -38,5 +38,5 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 If you have any questions about any aspect of the application, please explore the GitHub repo or reach me via email!  
 
-[Greg's Github](https://github.com/gregriss)
+[Greg's Github](https://github.com/gregriss)\n
 [Greg's Email](mailto:gregriss23@gmail.com)
