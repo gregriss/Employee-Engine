@@ -8,11 +8,11 @@ This application is a Node CLI which takes in user input in order to generate an
 
 ## Table of Contents  
 
-- [Installation](#installation)\n
-- [Usage](#usage)\n
-- [License](#license)\n
-- [Credits](#credits)\n
-- [Questions](#questions)\n
+- [Installation](#installation)  
+- [Usage](#usage)  
+- [License](#license)  
+- [Credits](#credits)  
+- [Questions](#questions)  
 
 ## Installation  
 
@@ -38,5 +38,5 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 If you have any questions about any aspect of the application, please explore the GitHub repo or reach me via email!  
 
-[Greg's Github](https://github.com/gregriss)\n
+[Greg's Github](https://github.com/gregriss)  
 [Greg's Email](mailto:gregriss23@gmail.com)
