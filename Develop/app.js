@@ -41,12 +41,47 @@ inquirer
         if (answers.role === 'Manager') {
             console.log("You are the manager");
 
+            inquirer
+                .prompt([
+                    {
+                        type: 'input',
+                        message: 'What is your office number?',
+                        name: 'office'
+                    }
+                ])
+                .then(answer => {
+                    console.log(answer);
+                })
         }
         else if (answers.role === 'Engineer') {
             console.log("You are an Engineer");
+
+            inquirer
+                .prompt([
+                    {
+                        type: 'input',
+                        message: 'What is your GitHub username?',
+                        name: 'github'
+                    }
+                ])
+                .then(answer => {
+                    console.log(answer);
+                })
         }
         else if (answers.role === 'Intern') {
             console.log("You are an intern.");
+
+            inquirer
+                .prompt([
+                    {
+                        type: 'input',
+                        message: 'What school do you attend?',
+                        name: 'school'
+                    }
+                ])
+                .then(answer => {
+                    console.log(answer);
+                })
         }
     })
     .catch(error => {
