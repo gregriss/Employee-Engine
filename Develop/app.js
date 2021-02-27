@@ -12,7 +12,7 @@ const render = require("./lib/htmlRenderer");
 
 
 // Write code to use inquirer to gather information about the development team members,
-// and to create objects for each team member (using the correct classes as blueprints!)
+
 inquirer
     .prompt([
         {
@@ -38,6 +38,10 @@ inquirer
         }
     ]).then(answers => {
         console.log(answers);
+
+        // and to create objects for each team member (using the correct classes as blueprints!)
+        // const employee = new Employee();
+
         if (answers.role === 'Manager') {
             console.log("You are the manager");
 
@@ -50,7 +54,14 @@ inquirer
                     }
                 ])
                 .then(answer => {
-                    console.log(answer);
+                    // console.log(answer);
+                    const manager = new Manager(userName);
+                    answers.userName = this.name;
+                    answers.id = this.id;
+                    answers.email = this.email;
+                    this.role = 'Manager';
+                    answer = this.office;
+                    console.log(manager);
                 })
         }
         else if (answers.role === 'Engineer') {
@@ -86,15 +97,17 @@ inquirer
     })
     .catch(error => {
         if (error.isTtyError) {
-            // Prompt couldn't be rendered in the current environment
+            console.log("Prompt couldn't be rendered in the current environment");
         }
         else {
-            // Something else went wrong
+            console.log("Something else went wrong");
         }
     });
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
 // generate and return a block of HTML including templated divs for each employee!
+
+// render();
 
 // After you have your html, you're now ready to create an HTML file using the HTML
 // returned from the `render` function. Now write it to a file named `team.html` in the
