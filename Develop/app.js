@@ -77,6 +77,13 @@ inquirer
                 ])
                 .then(answer => {
                     console.log(answer);
+                    // const engineer = new Engineer(userName);
+                    // answers.userName = this.name;
+                    // answers.id = this.id;
+                    // answers.email = this.email;
+                    // this.role = 'Engineer';
+                    // answer = this.github;
+                    // console.log(engineer);
                 })
         }
         else if (answers.role === 'Intern') {
