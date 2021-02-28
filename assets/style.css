@@ -1,9 +1,11 @@
-/* body {
-    box-shadow: -2px -2px 10px 5px rgb(50,50,50);
-} */
-
 .team-heading {
     color: rgb(240,240,230);
     background-image: radial-gradient( circle farthest-corner at 16.5% 28.1%,  rgb(22, 39, 71) 0%, rgba(0,112,218,1) 90% );
     box-shadow: 2px 2px 15px 8px rgb(44, 66, 107);
+    margin-bottom: 30px;
+}
+
+
+.employee-card {
+    margin: 15px;
 }
