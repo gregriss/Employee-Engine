@@ -10,6 +10,7 @@ This application is a Node CLI which takes in user input in order to generate an
 
 - [Installation](#installation)  
 - [Usage](#usage)  
+- [Tests](#tests)
 - [License](#license)  
 - [Credits](#credits)  
 - [Questions](#questions)  
@@ -22,6 +23,12 @@ Because this app is a command line interface, it requires git bash, Terminal, or
 
 A demo video for the application is available here:  
 
+## Tests  
+
+The 4 test suites are designed to check if the app can set various attributes of each class using constructors and methods:
+
+![Tests Passed](./assets/images/tests.png)
+
 ## License  
 
 Copyright 2021 Greg Riss
@@ -32,7 +39,13 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-## Credits
+## Credits  
+
+These sources were helpful in the creation of this app:
+
+Documentation for node.js (https://nodejs.org/en/docs/)
+Documentation for npm Inquirer (https://www.npmjs.com/package/inquirer)
+Documentation for npm Jest (https://jestjs.io/docs/en/getting-started)
 
 ## Questions  
 
