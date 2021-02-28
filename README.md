@@ -46,6 +46,7 @@ These sources were helpful in the creation of this app:
 Documentation for node.js (https://nodejs.org/en/docs/)
 Documentation for npm Inquirer (https://www.npmjs.com/package/inquirer)
 Documentation for npm Jest (https://jestjs.io/docs/en/getting-started)
+CSS gradients from (https://cssgradient.io/gradient-backgrounds/)
 
 ## Questions  
 

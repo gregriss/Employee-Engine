@@ -10,8 +10,10 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
 
+// creating array where employee objects will be stored
+const employees = [];
 
-// Write code to use inquirer to gather information about the development team members,
+// Write code to use inquirer to gather information about the development team members
 
 inquirer
     .prompt([
@@ -43,29 +45,37 @@ inquirer
         // const employee = new Employee();
 
         if (answers.role === 'Manager') {
-            console.log("You are the manager");
-
+            // console.log("You are the manager");
+            // createManager
             inquirer
                 .prompt([
                     {
                         type: 'input',
                         message: 'What is your office number?',
                         name: 'office'
+                    },
+                    {
+                        type: 'confirm',
+                        message: 'Are you finished entering team members?',
+                        name: 'done'
                     }
                 ])
                 .then(answer => {
                     // console.log(answer);
-                    const manager = new Manager(userName);
-                    answers.userName = this.name;
+                    
+                    const manager = new Manager(this.userName);
+                    answers.userName = this.userName;
                     answers.id = this.id;
                     answers.email = this.email;
                     this.role = 'Manager';
                     answer = this.office;
-                    console.log(manager);
+                    // console.log(manager);
+                    employees.push(manager);
                 })
         }
         else if (answers.role === 'Engineer') {
             console.log("You are an Engineer");
+            // console.log(answers);
 
             inquirer
                 .prompt([
@@ -77,13 +87,13 @@ inquirer
                 ])
                 .then(answer => {
                     console.log(answer);
-                    // const engineer = new Engineer(userName);
-                    // answers.userName = this.name;
-                    // answers.id = this.id;
-                    // answers.email = this.email;
-                    // this.role = 'Engineer';
-                    // answer = this.github;
-                    // console.log(engineer);
+                    const engineer = new Engineer(this.userName);
+                    answers.userName = this.name;
+                    answers.id = this.id;
+                    answers.email = this.email;
+                    this.role = 'Engineer';
+                    answer = this.github;
+                    console.log(engineer);
                 })
         }
         else if (answers.role === 'Intern') {
@@ -99,6 +109,13 @@ inquirer
                 ])
                 .then(answer => {
                     console.log(answer);
+                    const intern = new Intern(this.userName);
+                    answers.userName = this.name;
+                    answers.id = this.id;
+                    answers.email = this.email;
+                    this.role = 'Engineer';
+                    answer = this.github;
+                    console.log(engineer);
                 })
         }
     })
@@ -110,6 +127,9 @@ inquirer
             console.log("Something else went wrong");
         }
     });
+
+
+    
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
 // generate and return a block of HTML including templated divs for each employee!
