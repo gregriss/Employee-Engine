@@ -5,7 +5,20 @@
     margin-bottom: 30px;
 }
 
+.team-area {
+    display: flex;
+    flex-flow: row wrap;
+    margin-top: 30px;
+}
 
 .employee-card {
     margin: 15px;
+    box-shadow: 1px 1px 10px 3px rgb(76, 104, 156);
+    border: none;
+    width: 215px;
+}
+
+.card-header {
+    color: rgb(240,240,230);
+    background-image: radial-gradient( circle farthest-corner at 16.5% 28.1%,  rgb(41, 78, 146) 0%, rgba(0,112,218,1) 90% );
 }
