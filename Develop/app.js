@@ -15,126 +15,143 @@ const employees = [];
 
 // Write code to use inquirer to gather information about the development team members
 
-inquirer
-    .prompt([
-        {
-            type: 'input',
-            message: 'What is your name?',
-            name: 'userName'
-        },
-        {
-            type: 'input',
-            message: 'What is your id?',
-            name: 'id'
-        },
-        {
-            type: 'input',
-            message: 'What is your email address?',
-            name: 'email'
-        },
-        {
-            type: 'list',
-            message: 'What is your role?',
-            choices: ['Manager', 'Engineer', 'Intern'],
-            name: 'role'
-        }
-    ]).then(answers => {
-        console.log(answers);
+// Make first question a confirm about whether to continue?? 
 
-        // and to create objects for each team member (using the correct classes as blueprints!)
-        // const employee = new Employee();
+// {
+//     type: 'confirm',
+//     message: 'Are you finished entering team members?',
+//     name: 'done'
+// }
 
-        if (answers.role === 'Manager') {
-            // console.log("You are the manager");
-            // createManager
-            inquirer
-                .prompt([
-                    {
-                        type: 'input',
-                        message: 'What is your office number?',
-                        name: 'office'
-                    },
-                    {
-                        type: 'confirm',
-                        message: 'Are you finished entering team members?',
-                        name: 'done'
-                    }
-                ])
-                .then(answer => {
-                    // console.log(answer);
-                    
-                    const manager = new Manager(this.userName);
-                    answers.userName = this.userName;
-                    answers.id = this.id;
-                    answers.email = this.email;
-                    this.role = 'Manager';
-                    answer = this.office;
-                    // console.log(manager);
-                    employees.push(manager);
-                })
-        }
-        else if (answers.role === 'Engineer') {
-            console.log("You are an Engineer");
-            // console.log(answers);
+function initialize() {
+    inquirer
+        .prompt(
+            {
+                type: 'confirm',
+                message: 'Would you like to add a team member?',
+                name: 'add' 
+            }
+        ).then((answer) => {
+            if(answer.add) {
+                addEmployee();
+            }
+            else {
+                fs.writeFile(outputPath, render(employees), function(err) {
+                    if (err) {throw err}
+                });
+            };
+        });
+};
 
-            inquirer
-                .prompt([
-                    {
-                        type: 'input',
-                        message: 'What is your GitHub username?',
-                        name: 'github'
-                    }
-                ])
-                .then(answer => {
-                    console.log(answer);
-                    const engineer = new Engineer(this.userName);
-                    answers.userName = this.name;
-                    answers.id = this.id;
-                    answers.email = this.email;
-                    this.role = 'Engineer';
-                    answer = this.github;
-                    console.log(engineer);
-                })
-        }
-        else if (answers.role === 'Intern') {
-            console.log("You are an intern.");
+function addEmployee() {
+    inquirer
+        .prompt([
+            {
+                type: 'input',
+                message: 'What is your name?',
+                name: 'name'
+            },
+            {
+                type: 'input',
+                message: 'What is your id?',
+                name: 'id'
+            },
+            {
+                type: 'input',
+                message: 'What is your email address?',
+                name: 'email'
+            },
+            {
+                type: 'list',
+                message: 'What is your role?',
+                choices: ['Manager', 'Engineer', 'Intern'],
+                name: 'role'
+            }
+        ]).then(answers => {
+            console.log(answers);
 
-            inquirer
-                .prompt([
-                    {
-                        type: 'input',
-                        message: 'What school do you attend?',
-                        name: 'school'
-                    }
-                ])
-                .then(answer => {
-                    console.log(answer);
-                    const intern = new Intern(this.userName);
-                    answers.userName = this.name;
-                    answers.id = this.id;
-                    answers.email = this.email;
-                    this.role = 'Engineer';
-                    answer = this.github;
-                    console.log(engineer);
-                })
-        }
-    })
-    .catch(error => {
-        if (error.isTtyError) {
-            console.log("Prompt couldn't be rendered in the current environment");
-        }
-        else {
-            console.log("Something else went wrong");
-        }
-    });
+            // and to create objects for each team member (using the correct classes as blueprints!)
+            // const employee = new Employee();
 
+            if (answers.role === 'Manager') {
+                // console.log("You are the manager");
+                // createManager
+                inquirer
+                    .prompt([
+                        {
+                            type: 'input',
+                            message: 'What is your office number?',
+                            name: 'officeNumber'
+                        }
+                    ])
+                    .then(answer => {
+                        // console.log(answer);
+                        answer = this.officeNumber;
+                        const manager = new Manager(this.name, this.id, this.email, this.officeNumber);
+                        // console.log(manager);
+                        employees.push(manager);
+                    })
+            }
+            else if (answers.role === 'Engineer') {
+                console.log("You are an Engineer");
+                // console.log(answers);
 
-    
+                inquirer
+                    .prompt([
+                        {
+                            type: 'input',
+                            message: 'What is your GitHub username?',
+                            name: 'github'
+                        }
+                    ])
+                    .then(answer => {
+                        console.log(answer);
+                        answer = this.github;
+                        const engineer = new Engineer(this.name, this.id, this.email, this.github);
+
+                        console.log(engineer);
+                        employees.push(engineer);
+                    })
+            }
+            else if (answers.role === 'Intern') {
+                console.log("You are an intern.");
+
+                inquirer
+                    .prompt([
+                        {
+                            type: 'input',
+                            message: 'What school do you attend?',
+                            name: 'school'
+                        }
+                    ])
+                    .then(answer => {
+                        console.log(answer);
+                        answer = this.school;
+                        const intern = new Intern(this.name, this.id, this.email, this.school);
+
+                        console.log(intern);
+                        employees.push(intern);
+                    })
+            }
+        })
+        .catch(error => {
+            if (error.isTtyError) {
+                console.log("Prompt couldn't be rendered in the current environment");
+            }
+            else {
+                console.log("Something else went wrong");
+            }
+        });
+
+};
+
+initialize();
+
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
 // generate and return a block of HTML including templated divs for each employee!
 
-// render();
+// render(employees);
 
 // After you have your html, you're now ready to create an HTML file using the HTML
 // returned from the `render` function. Now write it to a file named `team.html` in the
