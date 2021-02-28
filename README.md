@@ -4,6 +4,8 @@
 
 ## Description  
 
+![Greg the Manager](./assets/images/greg-manager.png)
+
 This application is a Node CLI which takes in user input in order to generate an HTML page with descriptions and contact information for each member of a software engineering team. It can accomodate any number of team members who can be a combination of engineers and interns.
 
 ## Table of Contents  
@@ -21,7 +23,9 @@ Because this app is a command line interface, it requires git bash, Terminal, or
 
 ## Usage  
 
-A demo video for the application is available here:  
+A demo video for the application is available here: (https://drive.google.com/file/d/1xDLUZG7onPRxwOnZ8fxRCgeoJJtF71sX/view)
+
+![Results](./assets/images/team-result.png)
 
 ## Tests  
 
